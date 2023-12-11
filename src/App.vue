@@ -3,11 +3,13 @@ import AppNav from "./components/AppNav.vue"
 
 import { store } from "./store.js" //state management
 
-import PageHeader from "./components/PageHeader.vue"
+import PageHeader from "./components/PageHeader.vue";
+import PageMain from "./components/PageMain.vue"
 
 export default {
 	components: {
-		PageHeader
+		PageHeader,
+		PageMain
 	},
 	data() {
 		return {
@@ -25,6 +27,7 @@ export default {
 
 <template>
 	<PageHeader />
+	<PageMain />
 </template>
 
 <style lang="scss">
