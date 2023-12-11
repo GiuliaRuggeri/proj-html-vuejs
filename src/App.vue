@@ -1,12 +1,13 @@
 <script>
-import AppComponent from "./components/AppComponent.vue"
+import AppNav from "./components/AppNav.vue"
 
-import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
+
+import PageHeader from "./components/PageHeader.vue"
 
 export default {
 	components: {
-		AppComponent
+		PageHeader
 	},
 	data() {
 		return {
@@ -14,28 +15,16 @@ export default {
 		}
 	},
 	mounted() {
-		this.doThings();
 
-		// axios.get("indirizzo").then(risultato => {
-		// 	console.log(risultato);
-		// }).catch(errore => {
-		// 	console.error(errore);
-		// });
 	},
 	methods: {
-		doThings() {
-			console.log("App.vue does things");
-		}
+
 	}
 }
 </script>
 
 <template>
-	<main>
-		<AppComponent />
-
-		<button class="btn btn-primary">Primary button</button>
-	</main>
+	<PageHeader />
 </template>
 
 <style lang="scss">
