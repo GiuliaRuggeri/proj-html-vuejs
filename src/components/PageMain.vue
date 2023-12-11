@@ -1,10 +1,12 @@
 <script>
 import Cards from './Cards.vue';
+import Process from './Process.vue';
 
 export default {
     name: "PageMain",
     components: {
         Cards,
+        Process
     },
     data() {
         return {
@@ -39,6 +41,32 @@ export default {
                     title: "Dreams are illustrations",
                     subtitle: "Illustration",
                 }
+            ],
+            dots: [
+                {
+                    icon: "lightbulb",
+                    iconcolor: "#badac9",
+                    title: "First there's an idea",
+                    subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
+                },
+                {
+                    icon: "lightbulb",
+                    iconcolor: "",
+                    title: "Then we talk about",
+                    subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
+                },
+                {
+                    icon: "lightbulb",
+                    iconcolor: "",
+                    title: "And we think about",
+                    subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
+                },
+                {
+                    icon: "lightbulb",
+                    iconcolor: "",
+                    title: "So we draw along",
+                    subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
+                }
             ]
         }
     },
@@ -53,5 +81,17 @@ export default {
         </div>
 
     </div>
+    <div class="container-fluid">
+        <div class="row line">
+            <div class="col-3 p-0" v-for="dot in dots">
+                <Process :dot="dot" />
+            </div>
+        </div>
+
+    </div>
 </template>
-<style scoped></style>
+<style scoped>
+.line {
+    background-image: url(/img/svg-3.svg);
+}
+</style>
