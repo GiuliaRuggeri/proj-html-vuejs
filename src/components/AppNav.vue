@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-    <nav class="navbar bg-white align-items-center">
+    <nav class="navbar bg-white align-items-center menu">
         <div class="container-fluid">
             <img src="img/logo-sidearea-1.png" alt="">
             <form class="d-flex text-black" role="search">
@@ -64,4 +64,7 @@ export default {
 // @use './styles/partials/variables' as *;
 
 // ...qui eventuale SCSS di AppComponent
+.menu {
+    min-height: 6rem;
+}
 </style>
