@@ -23,5 +23,24 @@ export default {
 
 .square:hover .infocontainer {
     display: block;
+
+
+    /* animation: MyDiv;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+}
+
+@keyframes MyDiv {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    } */
 }
 </style>

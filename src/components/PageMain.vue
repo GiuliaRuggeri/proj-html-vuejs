@@ -1,12 +1,14 @@
 <script>
 import Cards from './Cards.vue';
 import Process from './Process.vue';
+import Work from './Work.vue';
 
 export default {
     name: "PageMain",
     components: {
         Cards,
-        Process
+        Process,
+        Work
     },
     data() {
         return {
@@ -50,20 +52,20 @@ export default {
                     subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
                 },
                 {
-                    icon: "lightbulb",
-                    iconcolor: "",
+                    icon: "comment",
+                    iconcolor: "#f8d12d",
                     title: "Then we talk about",
                     subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
                 },
                 {
-                    icon: "lightbulb",
-                    iconcolor: "",
+                    icon: "cloud",
+                    iconcolor: "#80465f",
                     title: "And we think about",
                     subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
                 },
                 {
-                    icon: "lightbulb",
-                    iconcolor: "",
+                    icon: "pen-ruler",
+                    iconcolor: "#eb6950",
                     title: "So we draw along",
                     subtitle: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself."
                 }
@@ -81,17 +83,25 @@ export default {
         </div>
 
     </div>
-    <div class="container-fluid">
+    <div class="container dotwrapper">
         <div class="row line">
-            <div class="col-3 p-0" v-for="dot in dots">
+            <div class="col-3 d-flex  justify-content-center" v-for="dot in dots">
                 <Process :dot="dot" />
             </div>
         </div>
 
     </div>
+    <Work />
 </template>
 <style scoped>
 .line {
-    background-image: url(/img/svg-3.svg);
+    background-image: url(/svg/svg-3.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3rem
+}
+
+.dotwrapper {
+    min-height: 20rem;
 }
 </style>
