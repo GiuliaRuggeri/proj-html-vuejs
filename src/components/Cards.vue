@@ -16,31 +16,23 @@ export default {
     </div>
 </template>
 <style scoped>
-.infocontainer {
-    display: none;
+.square {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
+.infocontainer {
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    background-color: white;
+    color: black;
+    padding: 1em;
+    transition: left 0.3s ease-in-out;
 }
 
 .square:hover .infocontainer {
-    display: block;
-
-
-    /* animation: MyDiv;
-    animation-duration: 1s;
-    animation-iteration-count: 2;
-    animation-timing-function: ease-in;
-    animation-direction: normal;
-}
-
-@keyframes MyDiv {
-    0% {
-        left: 0px;
-        top: 0px;
-    }
-
-    100% {
-        left: 0px;
-        top: 0px;
-    } */
+    left: 0;
 }
 </style>

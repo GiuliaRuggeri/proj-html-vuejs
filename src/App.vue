@@ -31,6 +31,14 @@ export default {
 	<PageHeader />
 	<PageMain />
 	<PageFooter />
+	<div class="stickycontainer">
+		<div class="stickyred d-flex justify-content-center align-items-center">
+			<img class="round" src="/svg/svg-4.svg" alt="">
+		</div>
+		<div class="stickywhite mt-2 d-flex justify-content-center align-items-center">
+			<img class="cart" src="/svg/svg-6.svg" alt="">
+		</div>
+	</div>
 </template>
 
 <style lang="scss">
@@ -45,5 +53,34 @@ export default {
 // ...qui eventuale SCSS di App.vue
 main {
 	padding: 1rem;
+}
+
+.stickycontainer {
+	position: fixed;
+	right: 0;
+	top: 15%;
+	z-index: 100;
+
+}
+
+.stickyred {
+	background-color: crimson;
+	width: 45px;
+	height: 45px;
+}
+
+.stickywhite {
+	background-color: white;
+	width: 45px;
+	height: 45px;
+	box-shadow: 1px 1px 1px 1px grey;
+}
+
+.round {
+	width: 30px;
+}
+
+.cart {
+	width: 30px;
 }
 </style>

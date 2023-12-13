@@ -2,10 +2,12 @@
 import Articles from './Articles.vue';
 import Contacts from './Contacts.vue';
 
+
 export default {
     components: {
         Articles,
-        Contacts
+        Contacts,
+
     },
     data() {
         return {

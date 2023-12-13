@@ -11,97 +11,216 @@ export default {
                 {
                     title: "Home",
                     submenu: [
-                        {
-                            title: "prova"
-                        },
-                        {
-                            title: "prova1"
-                        }
+                        [
+                            {
+                                title: "Main home"
+                            },
+                            {
+                                title: "Prova"
+                            },
+                            {
+                                title: "Prova"
+                            }
+                        ],
+
                     ]
 
                 },
                 {
                     title: "Pages",
                     submenu: [
-                        {
-                            title: "prova"
-                        },
-                        {
-                            title: "prova1"
-                        },
-                        {
-                            title: "prova2"
-                        }
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ]
+
                     ]
                 },
                 {
                     title: "Portfolio",
+                    submenu: [
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ]
+
+
+                    ]
 
                 },
                 {
                     title: "Blog",
+                    submenu: [
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ]
+
+                    ]
+
 
                 },
                 {
                     title: "Shop",
                     submenu: [
-                        {
-                            title: "prova"
-                        },
-                        {
-                            title: "prova1"
-                        },
-                        {
-                            title: "prova2"
-                        }
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ]
                     ]
                 },
                 {
                     title: "Elements",
+                    submenu: [
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
+                        [
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            },
+                            {
+                                title: "prova"
+                            }
+                        ],
 
+
+                    ]
                 }
 
             ]
         }
     },
-    methods: {
-
-    },
-    mounted() {
-
-    }
 }
+
+
+
 </script>
 
 <template>
     <nav class="navbar bg-white align-items-center menu">
         <div class="container-fluid">
             <img src="img/logo-sidearea-1.png" alt="">
-            <form class="d-flex text-black" role="search">
+            <div class="d-flex text-black">
 
-                <div class="dropdown" v-for="item in menuItems">
+                <div class="nav-item dropdown position-static" v-for="item in menuItems" :key="item.title">
+
                     <span class="me-4 item" type="button" aria-expanded="false">
                         {{ item.title }}
                     </span>
 
-                    <ul class="dropdown-menu w-100" v-if="item.submenu">
-                        <li v-for="submenu in item.submenu">
-                            {{ submenu.title }}
-                        </li>
-                    </ul>
+
+                    <div class="dropdown-menu" v-if="item.submenu"
+                        :class="[item.submenu && item.submenu.length > 1 ? 'dropdown-menu-right' : '']">
+                        <div class="d-flex">
+                            <div v-for="submenu in item.submenu" class="flex-fill text-center">
+                                <ul class="list-unstyled">
+                                    <li v-for="subitem in submenu" class="dropdown-item bg-transparent">
+                                        {{ subitem.title }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- <span class="me-4 item" v-for="item in menuItems">
-                    {{ item.title }}
-
-                    <ul v-if="item.submenu">
-                        <li v-for="submenu in item.submenu">
-                            {{ submenu.title }}
-                        </li>
-                    </ul>
-                </span> -->
                 <img data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" src="/svg/svg-1.svg" alt="">
-            </form>
+            </div>
         </div>
     </nav>
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
@@ -158,5 +277,22 @@ export default {
 
 .dropdown:hover .dropdown-menu {
     display: block;
+
+    background-color: #FAF7F1;
+}
+
+.dropdown-menu-right {
+    right: 0 !important;
+    left: auto !important;
+    width: 100%;
+
+}
+
+li {
+    border-bottom: solid 2px transparent;
+}
+
+li:hover {
+    border-bottom: solid 2px #C0E1CF;
 }
 </style>

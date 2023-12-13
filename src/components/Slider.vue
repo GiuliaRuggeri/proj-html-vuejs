@@ -29,9 +29,15 @@ export default {
 
     data() {
         return {
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+
             slides: [
                 {
-                    title: "Projects made with love",
+                    title: "Projects made with <span class='fst-italic fw-bold'>love</span>",
                     subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.",
                     button: "Read more",
                     image: [
@@ -40,7 +46,7 @@ export default {
 
                 },
                 {
-                    title: "Devotion that never ends",
+                    title: "Devotion that never <span class='fst-italic fw-bold'>ends</span>",
                     subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.",
                     button: "Read more",
                     image: [
@@ -48,7 +54,7 @@ export default {
                     ]
 
                 }, {
-                    title: "Our new folio full of joy",
+                    title: "Our new folio full of <span class='fst-italic fw-bold'>joy</span>",
                     subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.",
                     button: "Read more",
                     image: [
@@ -62,27 +68,41 @@ export default {
 }
 </script>
 <template>
-    <swiper :slides-per-view="1" :space-between="50" navigation @swiper="onSwiper" @slideChange="onSlideChange"
-        :modules="modules" :autoplay="{
-            delay: 2500,
+    <swiper :slides-per-view="1" :space-between="50" :navigation="navigation" @swiper="onSwiper"
+        @slideChange="onSlideChange" :modules="modules" :autoplay="{
+            delay: 5000,
             disableOnInteraction: false,
         }" :pagination="{
     clickable: true,
-}" :loop="true">
+
+}" :loop="true" style="--swiper-pagination-color: #E1C0B0;">
         <swiper-slide v-for="slide in slides">
             <div class="container">
                 <div class="row">
                     <div class="col-6 align-self-center">
-                        <h1 class="text-black title">{{ slide.title }}</h1>
+                        <h1 v-html="slide.title" class="text-black title"></h1>
                         <p class="text-black">{{ slide.subtitle }}</p>
                         <button type="button" class="btn p-3">{{ slide.button }}</button>
                     </div>
                     <div class="col-6 d-flex">
-                        <img v-for="img in slide.image" :src="img" alt="">
+                        <img v-for="img in slide.image" :src="img" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
         </swiper-slide>
+        <div class="swiper-button-prev">
+            <div>
+                <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;" class="arrow" />
+            </div>
+        </div>
+        <div class="swiper-button-next">
+            <div>
+                <font-awesome-icon :icon="['fas', 'chevron-right']" style="color: #ffffff;" class="arrow" />
+            </div>
+        </div>
+        <div class="swiper-pagination-bullet">
+
+        </div>
 
     </swiper>
 </template>
@@ -98,5 +118,23 @@ button:hover {
 
 .title {
     font-size: 5rem;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: "";
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+    border-radius: 50%;
+    background-color: #E1C0B0;
+    padding: 2rem;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
 }
 </style>

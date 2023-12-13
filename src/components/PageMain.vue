@@ -2,16 +2,22 @@
 import Cards from './Cards.vue';
 import Process from './Process.vue';
 import Work from './Work.vue';
+import { store } from '../store';
+
 
 export default {
     name: "PageMain",
     components: {
         Cards,
         Process,
-        Work
+        Work,
+
     },
     data() {
         return {
+
+            store,
+
             cards: [
                 {
                     image: "/img/h-2-port-img-1.jpg",
@@ -75,25 +81,33 @@ export default {
 }
 </script>
 <template>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4 p-0" v-for="card in cards">
-                <Cards :item="card" />
+    <div class="position-relative">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 p-0" v-for="card in cards">
+                    <Cards :item="card" />
+                </div>
             </div>
+
         </div>
+        <div class="dotwrapper">
+            <div class="row line">
+                <div class="col-3 d-flex  justify-content-center" v-for="dot in dots">
+                    <Process :dot="dot" />
+                </div>
+            </div>
+
+        </div>
+        <Work />
+        <a href="#" class="stickyarrow d-flex justify-content-center align-items-center">
+            <img class="arrow" src="/svg/svg-2.svg" alt="">
+        </a>
+
+
 
     </div>
-    <div class="container dotwrapper">
-        <div class="row line">
-            <div class="col-3 d-flex  justify-content-center" v-for="dot in dots">
-                <Process :dot="dot" />
-            </div>
-        </div>
-
-    </div>
-    <Work />
 </template>
-<style scoped>
+<style scoped lang="scss">
 .line {
     background-image: url(/svg/svg-3.svg);
     background-position: center;
@@ -103,5 +117,17 @@ export default {
 
 .dotwrapper {
     min-height: 20rem;
+}
+
+.stickyarrow {
+    position: fixed;
+    background-color: #D8F0E3;
+    right: 0;
+    bottom: 15%;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    scroll-behavior: smooth;
+
 }
 </style>

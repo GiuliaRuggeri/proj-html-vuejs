@@ -9,9 +9,9 @@ export default {
     <div class="wrapper">
         <div class="container text-black p-4">
             <div class="row">
-                <div class="col-3 contacts">
+                <div class="col-3">
                     <img src="/img/logo-sidearea-1.png" alt="">
-                    <p>Let's get creative</p>
+                    <p class="mt-2">Let's get creative</p>
                 </div>
                 <div class="col-3 contacts">
                     <p>maree@qodeinteractive.com</p>

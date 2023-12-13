@@ -7,14 +7,15 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <!--align items center -->
+    <div class="d-flex flex-column align-items-center mt-5">
 
 
-        <div class="dot d-flex justify-content-center align-items-center">
+        <div class="dot d-flex justify-content-center align-items-center ">
             <font-awesome-icon :icon="['fas', dot.icon]" size="2xl" :style="{ color: dot.iconcolor }" />
-
         </div>
-        <div class="text-black text-center">
+
+        <div class="text-black text-center mt-3">
             <h5>{{ dot.title }}</h5>
             <p>{{ dot.subtitle }}</p>
         </div>
